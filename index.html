@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alarma Vecinal</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#101827;color:white}
+header{background:#19283e;padding:22px;text-align:center}
+h1{margin:0;font-size:26px}
+header p{color:#b9c7d9}
+main{max-width:450px;margin:auto;padding:22px}
+.panel{background:#1e3048;padding:24px;border-radius:18px;text-align:center;margin-bottom:18px}
+.status{font-size:19px;font-weight:bold;color:#4ade80}
+button{width:100%;border:0;border-radius:14px;padding:20px;margin:9px 0;color:white;font-size:18px;font-weight:bold;cursor:pointer}
+.red{background:#dc2626}
+.green{background:#16803c}
+.blue{background:#2563eb}
+small{color:#cbd5e1}
+footer{text-align:center;color:#94a3b8;padding:20px}
+</style>
+</head>
+<body>
+<header>
+<h1>🚨 ALARMA VECINAL</h1>
+<p>Sistema comunitario de seguridad</p>
+</header>
+<main>
+<section class="panel">
+<h2>Estado de la alarma</h2>
+<div class="status" id="estado">● Sin conexión</div>
+<p><small>Modo demostración</small></p>
+</section>
+<section class="panel">
+<h2>Control de emergencia</h2>
+<button class="red" onclick="activar()">🚨 ACTIVAR ALARMA</button>
+<button class="green" onclick="desactivar()">✓ DESACTIVAR ALARMA</button>
+</section>
+<section class="panel">
+<h2>Administración</h2>
+<button class="blue" onclick="aviso()">👥 Acceso de vecinos</button>
+<button class="blue" onclick="aviso()">⚙️ Comité vecinal</button>
+</section>
+</main>
+<footer>Seguridad Vecinal · Versión de prueba</footer>
+<script>
+function activar(){
+ if(confirm("¿Confirmar activación de prueba?")){
+  document.getElementById("estado").textContent="● Alarma de prueba activada";
+  document.getElementById("estado").style.color="#f87171";
+ }
+}
+function desactivar(){
+ document.getElementById("estado").textContent="● Prueba desactivada";
+ document.getElementById("estado").style.color="#4ade80";
+}
+function aviso(){
+ alert("Esta función se configurará posteriormente.");
+}
+</script>
+</body>
+</html>
